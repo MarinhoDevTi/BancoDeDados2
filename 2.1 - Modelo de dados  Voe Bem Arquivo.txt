@@ -1,0 +1,39 @@
+Diogo Marinho da silva / Ketony
+
+ATIVIDADE 01
+
+SELECT escala.data_voo, piloto.codigo_piloto, piloto.nome_piloto
+FROM piloto 
+inner JOIN escala ON piloto.codigo_piloto = escala.codigo_piloto
+ WHERE escala.data_voo = DATE ('2021-10-23');
+
+############################################################################################################
+
+ATIVIDADE 02
+
+
+SELECT voo.hora, aeroporto.cidade, voo.aeroporto_origem FROM voo, aeroporto WHERE cidade = 'Uberlândia' AND voo.hora > time('12:00:00');
+
+
+
+############################################################################################################
+
+
+
+
+ATIVIDADE 3
+
+SELECT COUNT(*) quantidade_de_piloto, pais,companhia FROM piloto GROUP BY companhia,pais;
+
+
+
+############################################################################################################
+
+
+ATIVIDADE 4
+
+SELECT * FROM piloto,escala,voo, aeroporto WHERE piloto.codigo_piloto= escala.codigo_piloto and escala.codigo_voo = voo.codigo_voo and voo.aeroporto_origem = aeroporto.codigo_aeroporto;
+
+
+
+############################################################################################################
