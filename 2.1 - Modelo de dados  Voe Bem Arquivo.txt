@@ -12,7 +12,11 @@ inner JOIN escala ON piloto.codigo_piloto = escala.codigo_piloto
 ATIVIDADE 02
 
 
-SELECT voo.hora, aeroporto.cidade, voo.aeroporto_origem FROM voo, aeroporto WHERE cidade = 'Uberlândia' AND voo.hora > time('12:00:00');
+SELECT voo.hora, aeroporto.cidade, voo.aeroporto_origem 
+FROM aeroporto
+inner JOIN voo ON voo.aeroporto_origem = aeroporto.codigo_aeroporto
+WHERE cidade = 'Uberlândia'
+AND voo.hora > time('12:00:00');
 
 
 
